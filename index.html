@@ -19,19 +19,22 @@
 
   <section class="grid">
 
-    <div class="userCard" ng-repeat="user in users | orderBy : user.cards.length">
+    <div class="userCard" ng-repeat="user in users | orderBy : cards.length">
       <div class="user-info">
-        <img ng-src="https://trello-avatars.s3.amazonaws.com/{{user.userInfo.avatarHash}}/30.png"/>
+        <img fallback-src="/public/css/pug.png" ng-src="https://trello-avatars.s3.amazonaws.com/{{user.userInfo.avatarHash}}/30.png"/>
         <p>{{user.userInfo.fullName}} | {{user.cards.length}} cards</p>
+        <!-- <p>{{user.userInfo.id}}</p> -->
       </div>
-      
+
       <hr />
 
       <div ng-repeat="card in user.cards"
            ng-click="navigateToCard(card.shortUrl)"
            class="card">
-        <p class="card-name">{{card.name}}</p>
+
         <p class="board-name">{{card.boardName}}</p>
+        <p class="card-name">{{card.name}}</p>
+        <p class="activity">Last activity: {{card.dateLastActivity | date:'mediumDate'}}</p>
       </div>
     </div>
 
@@ -40,5 +43,6 @@
 
   <script type="text/javascript" src="app/app.js"></script>
   <script type="text/javascript" src="app/dataController.js"></script>
+  <script type="text/javascript" src="app/directives.js"></script>
 </body>
 </html>

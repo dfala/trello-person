@@ -48,7 +48,6 @@ angular.module('trello-person')
   var boardNamesMap = {};
 
   function parseDataByUser (data) {
-    console.info(data);
     boards = data;
 
     var users = [];
@@ -56,6 +55,9 @@ angular.module('trello-person')
     data.forEach(function (board) {
       // GET ID OF ALL USERS IN ARRAY
       board.memberships.forEach(function(member) {
+        // Don't account for managers
+        if (member.idMember == '54934bdddfd54cb2c7f37010' || member.idMember == '52d84fcd9595f66b5b68801d' || member.idMember == '4f552ff2b0ca8f2217fc7d38' || member.idMember == '53c3772a84b64a8c50441911' || member.idMember == '5474c41bf9c8688c5ec07390' || member.idMember == '557976153d63ef846e16a992' || member.idMember == '4e6a7fad05d98b02ba00845c') return;
+
         if (users.indexOf(member.idMember) < 0) {
           users.push(member.idMember);
 
@@ -87,6 +89,9 @@ angular.module('trello-person')
       promiseGoal += 1;
 
       cards.forEach(function (card) {
+        // Don't consider JaneMountain or Hack ideas
+        if (card.idBoard == "55fc4e7a5908de28331d8d0e") return;
+
         card.idMembers.forEach(function (memberId) {
           if (userIds.indexOf(memberId) < 0) return;
           card.boardName = boardNamesMap[boardId];
@@ -96,7 +101,6 @@ angular.module('trello-person')
               userItem.cards.push(card);
             }
           });
-
           // cardsPerUser[userIds.indexOf(memberId)][memberId].push(card);
         });
       });
@@ -125,7 +129,6 @@ angular.module('trello-person')
 
         if (promiseCount === cardsPerUser.length) {
           $scope.users = cardsPerUser;
-          console.warn(cardsPerUser);
           $scope.$digest();
         }
       }, errorGetData);

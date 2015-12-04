@@ -1,5 +1,6 @@
 section.grid {
   display: inline-flex;
+  align-items: flex-start;
   padding-top: 20px;
 
   @card-radius: 3px;
@@ -58,20 +59,31 @@ section.grid {
     }
 
     .card-name {
-      margin-top: 30px;
+      margin: 30px 0 20px 0;
+    }
+
+    .sub-section-card {
+      padding: 5px 10px;
+      font-size: 12px;
     }
 
     .board-name {
+      .sub-section-card;
       background-color: #858FB1;
-      padding: 5px 10px;
-      font-size: 12px;
       color: #fff;
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
-      // border-top-left-radius: @card-radius;
-      // border-top-right-radius: @card-radius;
+    }
+
+    .activity {
+      .sub-section-card;
+      background-color: #eee;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
     }
   }
 }

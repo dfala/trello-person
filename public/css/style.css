@@ -30,6 +30,7 @@ header {
 }
 section.grid {
   display: inline-flex;
+  align-items: flex-start;
   padding-top: 20px;
 }
 section.grid .user-info {
@@ -78,15 +79,28 @@ section.grid .card p {
   margin: 0;
 }
 section.grid .card .card-name {
-  margin-top: 30px;
+  margin: 30px 0 20px 0;
 }
-section.grid .card .board-name {
-  background-color: #858FB1;
+section.grid .card .sub-section-card {
   padding: 5px 10px;
   font-size: 12px;
+}
+section.grid .card .board-name {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #858FB1;
   color: #fff;
   position: absolute;
   top: 0;
   right: 0;
+  width: 100%;
+}
+section.grid .card .activity {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
 }
