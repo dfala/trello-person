@@ -20,10 +20,10 @@ angular.module('trello-person')
 
 
   $scope.getData = function () {
-    Trello.get('/member/me/boards', success, error);
+    Trello.get('/member/me/boards', successGetData, error);
   };
 
-  function success (response) {
+  function successGetData (response) {
     $scope.users = dataService.parseDataByUser(response);
     $scope.$digest();
   };
