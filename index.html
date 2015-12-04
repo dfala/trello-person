@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 
-<html>
+<html ng-app="trello-person">
 <head>
   <title>Trello Person</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://trello.com/1/client.js?key=e82e63f417b897741fa8f0fc3c802210"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   <link rel="stylesheet" type="text/css" href="public/css/style.css">
 </head>
-<body>
+
+<body ng-controller="dataController">
   <header>
     Trello Person
   </header>
 
 
+  <button ng-click="getData()">Get Data</button>
+
+  <div ng-repeat="user in users">
+    {{user}}
+  </div>
+
+
+  <script type="text/javascript" src="app/app.js"></script>
+  <script type="text/javascript" src="app/dataController.js"></script>
+  <script type="text/javascript" src="app/dataService.js"></script>
 </body>
 </html>

@@ -1,10 +1,11 @@
 {
-  "name": "less-tutorial",
-  "version": "1.0.0",
+  "name": "trello-person",
+  "version": "0.0.1",
   "description": "A LESS tutorial with Grunt.",
   "main": "Gruntfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Daniel Falabella",
   "license": "ISC",
@@ -14,7 +15,20 @@
     "grunt-contrib-watch": "^0.6.1",
     "jit-grunt": "^0.9.1",
     "less": "^2.5.1"
-  }
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "requestify": "^0.1.17"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfala/trello-person.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dfala/trello-person/issues"
+  },
+  "homepage": "https://github.com/dfala/trello-person#readme"
 }
-
-
