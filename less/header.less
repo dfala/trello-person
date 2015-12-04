@@ -1,10 +1,14 @@
 header {
-  @local-height: 50px;
   background-color: #fff;
-  min-height: @local-height;
+  min-height: @header-height;
   border-bottom: 1px solid @gray;
-  line-height: @local-height;
+  line-height: @header-height;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 }

@@ -15,15 +15,30 @@
   </header>
 
 
-  <button ng-click="getData()">Get Data</button>
+  <!-- <button ng-click="getData()">Get Data</button> -->
 
-  <div ng-repeat="user in users">
-    {{user}}
-  </div>
+  <section class="grid">
+
+    <div class="userCard" ng-repeat="user in users | orderBy : user.cards.length">
+      <div class="user-info">
+        <img ng-src="https://trello-avatars.s3.amazonaws.com/{{user.userInfo.avatarHash}}/30.png"/>
+        <p>{{user.userInfo.fullName}} | {{user.cards.length}} cards</p>
+      </div>
+      
+      <hr />
+
+      <div ng-repeat="card in user.cards"
+           ng-click="navigateToCard(card.shortUrl)"
+           class="card">
+        <p class="card-name">{{card.name}}</p>
+        <p class="board-name">{{card.boardName}}</p>
+      </div>
+    </div>
+
+  </section>
 
 
   <script type="text/javascript" src="app/app.js"></script>
   <script type="text/javascript" src="app/dataController.js"></script>
-  <script type="text/javascript" src="app/dataService.js"></script>
 </body>
 </html>

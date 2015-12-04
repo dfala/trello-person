@@ -1,0 +1,77 @@
+section.grid {
+  display: inline-flex;
+  padding-top: 20px;
+
+  @card-radius: 3px;
+
+  .user-info {
+    line-height: 30px;
+    display: inline-block;
+
+    p {
+      margin: 0;
+      float: left;
+      margin-left: 10px;
+      font-weight: 600;
+    }
+
+    img {
+      max-width: 30px;
+      max-height: 30px;
+      float: left;
+    }
+  }
+
+  .userCard, .card {
+    background-color: #fff;
+    width: 250px;
+    min-height: 200px;
+    padding: 10px;
+    border: 1px solid @gray-darker1;
+    border-radius: @card-radius;
+  }
+
+  .userCard {
+    margin: 10px;
+    // box-shadow: @standard-shadow;
+    background-color: @gray-lighter1;
+    width: 300px;
+
+    hr {
+      border-top: 0;
+      border-left: 0;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .card {
+    cursor: pointer;
+    position: relative;
+    margin: 25px auto;
+
+    &:hover {
+      border: 1px solid @blue;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .card-name {
+      margin-top: 30px;
+    }
+
+    .board-name {
+      background-color: #858FB1;
+      padding: 5px 10px;
+      font-size: 12px;
+      color: #fff;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      // border-top-left-radius: @card-radius;
+      // border-top-right-radius: @card-radius;
+    }
+  }
+}
