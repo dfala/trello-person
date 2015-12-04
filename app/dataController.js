@@ -49,7 +49,6 @@ angular.module('trello-person')
 
   function parseDataByUser (data) {
     boards = data;
-    console.warn(data);
     var users = [];
 
     data.forEach(function (board) {
