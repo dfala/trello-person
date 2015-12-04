@@ -31,7 +31,7 @@ header {
 section.grid {
   display: inline-flex;
   align-items: flex-start;
-  padding-top: 20px;
+  padding: 20px 10px;
 }
 section.grid .user-info {
   line-height: 30px;

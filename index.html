@@ -19,7 +19,7 @@
 
   <section class="grid">
 
-    <div class="userCard" ng-repeat="user in users | orderBy : cards.length">
+    <div class="userCard" ng-repeat="user in users">
       <div class="user-info">
         <img fallback-src="/public/css/pug.png" ng-src="https://trello-avatars.s3.amazonaws.com/{{user.userInfo.avatarHash}}/30.png"/>
         <p>{{user.userInfo.fullName}} | {{user.cards.length}} cards</p>
