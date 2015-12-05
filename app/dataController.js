@@ -85,11 +85,17 @@ angular.module('trello-person')
       '54934bdddfd54cb2c7f37010', '52d84fcd9595f66b5b68801d', '4f552ff2b0ca8f2217fc7d38', '53c3772a84b64a8c50441911',
       '5474c41bf9c8688c5ec07390', '564a076e6c7e55890c4af0f1', '557976153d63ef846e16a992', '4e6a7fad05d98b02ba00845c',
       '560177cc7f811c3a8f2ac82b', '544727553007a090c3d02f7c', '560177385015d0908f5964ea', '56017726a92657be642536c3',
-      '55fb8cd18615dde67bdd09b6', '55f85767d8ddcd153ed0baf1', '55f1f8466c4096eee9d49dab'
+      '55fb8cd18615dde67bdd09b6', '55f85767d8ddcd153ed0baf1', '55f1f8466c4096eee9d49dab', '562e8146c83f4c33a189a728'
     ];
     if (nonAllowedMembers.indexOf(memberId) > -1) return true;
     return false;
-  }
+  };
+
+  function checkInvalidBoard (boardId) {
+    var invalidIds = ['55fc4e7a5908de28331d8d0e', '55f06b6e77e5100cc406719c']
+    if (invalidIds.indexOf(boardId) > -1) return true;
+    return false;
+  };
 
   /////////////////////////////////////////////////////////
 
@@ -100,7 +106,7 @@ angular.module('trello-person')
 
       cards.forEach(function (card) {
         // Don't consider JaneMountain or Hack ideas
-        if (card.idBoard == '55fc4e7a5908de28331d8d0e' || card.idBoard == '56006352818d01c955612671') return;
+        if (checkInvalidBoard(card.idBoard)) return;
 
         card.idMembers.forEach(function (memberId) {
           if (userIds.indexOf(memberId) < 0) return;
