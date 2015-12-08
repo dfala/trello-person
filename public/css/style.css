@@ -108,6 +108,8 @@ section.grid .card .board-name {
 section.grid .card .activity {
   padding: 5px 10px;
   font-size: 12px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   background-color: #eee;
   position: absolute;
   bottom: 0;
