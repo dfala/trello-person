@@ -92,7 +92,7 @@ angular.module('trello-person')
   };
 
   function checkInvalidBoard (boardId) {
-    var invalidIds = ['55fc4e7a5908de28331d8d0e', '55f06b6e77e5100cc406719c']
+    var invalidIds = ['55fc4e7a5908de28331d8d0e', '55f06b6e77e5100cc406719c', '56328157ca986d8905e96316']
     if (invalidIds.indexOf(boardId) > -1) return true;
     return false;
   };
@@ -103,7 +103,7 @@ angular.module('trello-person')
 
     var success = function (cards) {
       promiseGoal += 1;
-
+      
       cards.forEach(function (card) {
         // Don't consider JaneMountain or Hack ideas
         if (checkInvalidBoard(card.idBoard)) return;
